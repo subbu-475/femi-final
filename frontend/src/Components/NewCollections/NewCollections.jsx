@@ -20,6 +20,7 @@ const NewCollections = () => {
         let res = await axios.get(`${API_URL}/master/products`);
         setProducts(res?.data?.products)
       } catch (err) {
+        console.log(err);
         setOpenAlert(true);
         setAlertMessage("something went wrong!")
         return;
