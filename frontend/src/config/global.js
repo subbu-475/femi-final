@@ -1,6 +1,6 @@
 const API_URL = "http://3.27.225.146:8000";
 
-// const API_URL = "https://femi9-demo.onrender.com";
+// const API_URL = "http://localhost:8000";
 
 export default API_URL;
 

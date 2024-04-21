@@ -41,83 +41,84 @@ function Payment() {
 		setBtnSubmit(true);
 		setProcessing(true);
 
-	
-		await registerUser("response?.razorpay_payment_id");
-		setProcessing(false);
-		setPaynow(false);
-		// try {
-		// 	// Fetch the checkout details
-		// 	const orderUrl = `${API_URL}/api/payment/orders`;
-		// 	const res = await axios.post(orderUrl, { amount: totalAmount + 50 });
-		// 	console.log(res.data)
 
-		// 	// Construct options for Razorpay
-		// 	var options = {
-		// 		key: "rzp_test_HQ3xaLGAC0SGra",
-		// 		amount: Number(res?.data?.data?.amount),
-		// 		currency: "INR",
-		// 		name: "Femi9",
-		// 		description: "Order Transaction",
-		// 		order_id: res?.data?.id,
-		// 		handler: async function (response) {
-		// 			try {
+		// await registerUser("response?.razorpay_payment_id");
+		// setProcessing(false);
+		// setPaynow(false);
+		try {
+			// Fetch the checkout details
+			const orderUrl = `${API_URL}/api/payment/orders`;
+			const res = await axios.post(orderUrl, { amount: totalAmount + 50 });
+			console.log(res.data)
 
-		// 				alert("Payment successful!");
-		// 				setProcessing(true);
+			// Construct options for Razorpay
+			var options = {
+				key: "rzp_test_HQ3xaLGAC0SGra",
+				amount: Number(res?.data?.data?.amount),
+				currency: "INR",
+				name: "Femi9",
+				description: "Order Transaction",
+				order_id: res?.data?.id,
+				handler: async function (response) {
+					try {
 
-
-
-		// 				await registerUser(response?.razorpay_payment_id);
-		// 				setProcessing(false);
+						setProcessing(true);
 
 
 
-		// 				setOpenAlertorderPlaced(true);
-		// 				setAlertMessageorderPlaced("Order Placed Succesfully!");
-
-
-		// 			} catch (error) {
-		// 				console.error("Error occurred after payment success:", error);
-		// 				// Handle any errors that occur after successful payment
-		// 			}
-		// 		},
-		// 		// callback_url: "http://localhost:8004/api/verificationrazorpaystatus",
-		// 		prefill: {
-		// 			"email": "femi9womens@gmail.com",
-		// 			"contact": "8124337451"
-		// 		},
-		// 		notes: {
-		// 			"address": "Razorpay Corporate Office"
-		// 		},
-		// 		theme: {
-		// 			"color": "black"
-		// 		}
-		// 	};
-
-
-		// 	var razorpaycard = new window.Razorpay(options);
-
-
-		// 	razorpaycard.open();
-		// 	setBtnSubmit(false);
+						await registerUser(response?.razorpay_payment_id);
+						setProcessing(false);
 
 
 
+						setOpenAlertorderPlaced(true);
+						setAlertMessageorderPlaced("Order Placed Succesfully!");
 
-		// 	razorpaycard.on('payment.failed', function (response) {
 
-		// 		console.log("Payment failed!");
-		// 		setBtnSubmit(false);
-		// 		console.log(response.error.code);
-		// 		console.log(response.error.description);
+					} catch (error) {
+						console.error("Error occurred after payment success:", error);
+						// Handle any errors that occur after successful payment
+					}
+				},
+				// callback_url: "http://localhost:8004/api/verificationrazorpaystatus",
+				prefill: {
+					"email": "femi9womens@gmail.com",
+					"contact": "8124337451"
+				},
+				notes: {
+					"address": "Razorpay Corporate Office"
+				},
+				theme: {
+					"color": "black"
+				}
+			};
 
-		// 	});
 
-		// } catch (error) {
-		// 	setBtnSubmit(false);
-		// 	console.error("Error occurred:", error);
+			var razorpaycard = new window.Razorpay(options);
 
-		// }
+
+			razorpaycard.open();
+			setBtnSubmit(false);
+			setPaynow(false);
+			setProcessing(false);
+
+
+
+
+			razorpaycard.on('payment.failed', function (response) {
+
+				console.log("Payment failed!");
+				setBtnSubmit(false);
+				console.log(response.error.code);
+				console.log(response.error.description);
+
+			});
+
+		} catch (error) {
+			setBtnSubmit(false);
+			console.error("Error occurred:", error);
+
+		}
 	};
 
 	const registerUser = async (paymentid) => {
@@ -125,7 +126,7 @@ function Payment() {
 		try {
 			// Use Promise.all to wait for all async operations to complete
 			await Promise.all(cartItems.map(async (data) => {
-	
+
 				await axios.post(`${API_URL}/checkout/orders`, {
 					clientname: `${userData?.firstname} ${userData?.lastname}`,
 					firstname: userData?.firstname,
@@ -203,6 +204,8 @@ function Payment() {
 				await axios.delete(`${API_URL}/cart/cartitem/${data._id}`);
 			}));
 
+			navigate('/placedorders')
+
 		} catch (err) {
 			console.log(err); // Log the error object for debugging
 			let errorMessage = err.response?.data?.message || "Something went wrong!";
@@ -215,11 +218,11 @@ function Payment() {
 
 		try {
 			// Use Promise.all to wait for all async operations to complete
-		
+
 
 			await Promise.all(cartItems.map(async (data) => {
 
-				
+
 				await axios.post(`${API_URL}/checkout/orders/sendmailtoseller`, {
 					clientname: `${userData?.firstname} ${userData?.lastname}`,
 					email: userData?.email,
