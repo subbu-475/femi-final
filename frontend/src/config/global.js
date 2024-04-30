@@ -1,4 +1,4 @@
-const API_URL = "http://3.27.225.146:8000";
+const API_URL = "https://femi9forwomens.online/";
 
 // const API_URL = "http://localhost:8000";
 
