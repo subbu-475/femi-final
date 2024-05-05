@@ -35,6 +35,7 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
+
 # Dependency directories
 node_modules/
 jspm_packages/
@@ -42,8 +43,6 @@ jspm_packages/
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
-# TypeScript cache
-*.tsbuildinfo
 
 # Optional npm cache directory
 .npm
@@ -80,13 +79,9 @@ web_modules/
 .cache
 .parcel-cache
 
-# Next.js build output
-.next
-out
 
-# Nuxt.js build / generate output
-.nuxt
-dist
+
+
 
 # Gatsby files
 .cache/
@@ -94,8 +89,6 @@ dist
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
 
-# vuepress build output
-.vuepress/dist
 
 # vuepress v2.x temp and cache directory
 .temp
@@ -122,6 +115,5 @@ dist
 # yarn v2
 .yarn/cache
 .yarn/unplugged
-.yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
