@@ -58,6 +58,7 @@ function Payment() {
 			var options = {
 				key: razorpayKey,
 				amount: Number(res?.data?.data?.amount),
+				// amount:Number(100),
 				currency: "INR",
 				name: "Femi9",
 				description: "Order Transaction",
