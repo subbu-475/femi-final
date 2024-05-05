@@ -11,7 +11,7 @@ function PrivacyPolicy() {
     <br/>
       <Typography variant="h3" gutterBottom sx={{color:'darkgreen'}}>Privacy Policy</Typography>
       <Typography variant="body1" paragraph>
-        Your privacy is important to us. It is [Your Company Name]'s policy to respect your privacy regarding any information we may collect from you across our website, [Your Website URL], and other sites we own and operate.
+        Your privacy is important to us. It is our's policy to respect your privacy regarding any information we may collect from you across our website,https://femi9forwomens.online, and other sites we own and operate.
       </Typography>
       <Typography variant="h5" gutterBottom sx={{color:'darkgreen'}}>1. Information We Collect</Typography>
       <Typography variant="body1" paragraph>

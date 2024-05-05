@@ -41,18 +41,22 @@ const NewsLetter = () => {
   return (
     <div className='newsletter'>
       <h1>Get Exclusive Offers On Your Email</h1>
-      <p>Subscribe to our Femi9 for new Updates</p>
-      <div>
+      <p>Subscribe to our newsletter for new updates</p>
+
+      <div style={{ display: 'flex', width: '100%',  }}>
         <input
           type="email"
-          placeholder='Your Email id'
+          placeholder='Your Email ID'
           value={email}
           onChange={handleInputChange}
+          style={{width:'50%'}}
         />
         <Button onClick={getMail} className="subscribe-btn" sx={{ color: "orange" }}>Subscribe</Button>
       </div>
+
       {error && <p className="error-message" style={{ color: "red", }}>{error}</p>}
     </div>
+
   );
 };
 

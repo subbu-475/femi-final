@@ -29,7 +29,7 @@ app.use('/cart',cartRoutes);
 app.use('/checkout',orderRoutes);
 app.use("/api/payment/", paymentRoutes);
 
-//for running frontend in here
+// for running frontend in here
 app.use(express.static((path.join(__dirname,'../frontend/build'))));
 app.get('*',(req,res)=>{
   res.sendFile(path.resolve(__dirname,'../frontend/build/index.html'))

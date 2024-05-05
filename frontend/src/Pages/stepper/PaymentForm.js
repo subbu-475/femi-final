@@ -36,7 +36,7 @@ function Payment() {
 
 
 	const sendRegistration = async () => {
-		console.log("picked")
+		// console.log("picked")
 		setPaynow(true);
 		setBtnSubmit(true);
 		setProcessing(true);
@@ -49,11 +49,14 @@ function Payment() {
 			// Fetch the checkout details
 			const orderUrl = `${API_URL}/api/payment/orders`;
 			const res = await axios.post(orderUrl, { amount: totalAmount + 50 });
-			console.log(res.data)
+
+			const resnew = await axios.get(`${API_URL}/api/payment/razorpay/key`);
+			const razorpayKey = resnew?.data?.key;
+			// console.log(resnew?.data)
 
 			// Construct options for Razorpay
 			var options = {
-				key: "rzp_test_HQ3xaLGAC0SGra",
+				key: razorpayKey,
 				amount: Number(res?.data?.data?.amount),
 				currency: "INR",
 				name: "Femi9",

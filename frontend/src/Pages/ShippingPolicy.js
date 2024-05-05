@@ -12,7 +12,7 @@ function ShippingPolicy() {
       <Paper elevation={3} style={{ padding: '20px', marginBottom: '20px' }}>
         <Typography variant="h3" gutterBottom sx={{color:'darkgreen'}}>Shipping Policy</Typography>
         <Typography variant="body1" paragraph>
-          Thank you for visiting and shopping at [Your Company Name]. The following are the terms and conditions that constitute our Shipping Policy.
+          Thank you for visiting and shopping at Our Site. The following are the terms and conditions that constitute our Shipping Policy.
         </Typography>
         <Typography variant="h5" gutterBottom sx={{color:'darkgreen'}}>Domestic Shipping Policy</Typography>
         <Typography variant="body1" paragraph>
@@ -32,10 +32,10 @@ function ShippingPolicy() {
         <Typography variant="body1" paragraph>
           You will receive a Shipment Confirmation email once your order has shipped containing your tracking number(s). The tracking number will be active within 24 hours.
         </Typography>
-        <Typography variant="h5" gutterBottom sx={{color:'darkgreen'}}>Customs, Duties, and Taxes</Typography>
+        {/* <Typography variant="h5" gutterBottom sx={{color:'darkgreen'}}>Customs, Duties, and Taxes</Typography>
         <Typography variant="body1" paragraph>
           [Your Company Name] is not responsible for any customs and taxes applied to your order. All fees imposed during or after shipping are the responsibility of the customer (tariffs, taxes, etc.).
-        </Typography>
+        </Typography> */}
         {/* Add more sections as needed */}
       </Paper>
     </Container>

@@ -21,7 +21,7 @@ router.post("/orders", async (req, res) => {
 				console.log(error);
 				return res.status(500).json({ message: "Something Went Wrong!" });
 			}
-			res.status(200).json({ data: order,item: process.env.KEY_ID});
+			res.status(200).json({ data: order, item: process.env.KEY_ID });
 		});
 	} catch (error) {
 		res.status(500).json({ message: "Internal Server Error!" });
@@ -49,6 +49,11 @@ router.post("/verify", async (req, res) => {
 		res.status(500).json({ message: "Internal Server Error!" });
 		console.log(error);
 	}
+});
+
+router.get('/razorpay/key', (req, res) => {
+	const razorpayKey = process.env.KEY_ID; // Fetch key from environment variables
+	res.json({ key: razorpayKey });
 });
 
 module.exports = router;

@@ -42,33 +42,33 @@ const Popular = () => {
       <br />
       <br />
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={4} lg={2.4}>
-            <Item>
+        <Grid container spacing={2} sx={{padding:'0 20px',}}>
+          <Grid item xs={12} sm={6} md={4} lg={2.4} >
+            <Item sx={{borderRadius:'30px'}}>
               <img src={magnetic} alt="Magnetic" />
               <p>It helps to relieve menstrual pain</p>
             </Item>
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={2.4}>
-            <Item>
+            <Item sx={{borderRadius:'30px'}}>
               <img src={anion} alt="Anion" />
               <p>This technology prevents bacterial buildup and relieves stress</p>
             </Item>
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={2.4}>
-            <Item>
+            <Item sx={{borderRadius:'30px'}}>
               <img src={far} alt="Far" />
               <p>It is present in the pad promotes blood circulation</p>
             </Item>
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={2.4}>
-            <Item>
+            <Item sx={{borderRadius:'30px'}}>
               <img src={nano} alt="Nano" />
               <p>It revitalizes cells and supports the immune system</p>
             </Item>
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={2.4}>
-            <Item>
+            <Item sx={{borderRadius:'30px'}}>
               <img src={chitin} alt="Chitin" />
               <p>It is an Anti-Microbial Agent & protects inner cell walls</p>
             </Item>
