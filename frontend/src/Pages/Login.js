@@ -41,6 +41,7 @@ function Login() {
             if (response.data.status === true) {
                 localStorage.setItem('token', response.data.token);
                 navigate('/');
+                window.location.reload();
             } else {
                 toast.error(response.data);
             }
