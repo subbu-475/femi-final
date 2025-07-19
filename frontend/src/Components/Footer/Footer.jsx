@@ -44,12 +44,12 @@ const Footer = () => {
         </div>
         {/* WhatsApp Icons */}
         <Box sx={styles.iconContainer}>
-          <a href="https://wa.link/uo10yz" target="_blank" rel="noopener noreferrer">
+          <a href="#" target="_blank" rel="noopener noreferrer">
             <WhatsAppIcon sx={{ fontSize: '3rem', color: 'green', marginBottom: '1rem' }} />
           </a>
-          <a href="https://wa.link/mkylj2" target="_blank" rel="noopener noreferrer">
+          {/* <a href="https://wa.link/mkylj2" target="_blank" rel="noopener noreferrer">
             <WhatsAppIcon sx={{ fontSize: '3rem', color: 'green' }} />
-          </a>
+          </a> */}
         </Box>
       </div>
     </>
