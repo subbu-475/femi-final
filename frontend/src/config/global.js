@@ -1,6 +1,6 @@
-// const API_URL = "https://femi9forwomens.online";
+const API_URL = "https://femi-final.onrender.com";
 
-const API_URL = "http://localhost:8000";
+// const API_URL = "http://localhost:8000";
 
 export default API_URL;
 
